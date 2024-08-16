@@ -1,0 +1,219 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_mrp",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_expiry_date",
+				"type": "string"
+			}
+		],
+		"name": "addMedicine",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_user_type",
+				"type": "uint8"
+			},
+			{
+				"internalType": "string",
+				"name": "_licence_no",
+				"type": "string"
+			}
+		],
+		"name": "addUser",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Puremeds.user_type",
+						"name": "user_t",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "licence_no",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "medHist",
+						"type": "uint256[]"
+					}
+				],
+				"internalType": "struct Puremeds.User",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_medID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_next_user",
+				"type": "address"
+			}
+		],
+		"name": "updateBuyer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_medID",
+				"type": "uint256"
+			}
+		],
+		"name": "verifyState",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_medID",
+				"type": "uint256"
+			}
+		],
+		"name": "getMedicineDetails",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "mrp",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "expiry_date",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "user_addr",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "isVerified",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Puremeds.chain_user[]",
+						"name": "users",
+						"type": "tuple[]"
+					}
+				],
+				"internalType": "struct Puremeds.Medicine",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			}
+		],
+		"name": "getUserDetails",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Puremeds.user_type",
+						"name": "user_t",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "licence_no",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "medHist",
+						"type": "uint256[]"
+					}
+				],
+				"internalType": "struct Puremeds.User",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
